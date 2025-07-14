@@ -10,13 +10,13 @@ function convertToRoman(num) {
     };
 
   let result = "";
-
-	for (const { value, symbol } of obj) {
-		while (num >= value) {
-			result += symbol;
-			num -= value;
-		}
-	}
+const entries = Object.values(obj);
+	for (const [symbol, value] of entries) {
+    while (num >= value) {
+      result += symbol;
+      num -= value;
+    }
+  }
 
 	return result;
 
